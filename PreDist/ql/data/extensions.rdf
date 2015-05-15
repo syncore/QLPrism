@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:NS1="http://www.mozilla.org/2004/em-rdf#"
+         xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Seq RDF:about="urn:mozilla:item:root">
+    <RDF:li RDF:resource="urn:mozilla:item:QLDemoPlayer@qldp"/>
+    <RDF:li RDF:resource="urn:mozilla:item:qlprismtools@qlprism.us"/>
+  </RDF:Seq>
+  <RDF:Description RDF:about="urn:mozilla:item:qlprismtools@qlprism.us"
+                   NS1:installLocation="app-profile"
+                   NS1:version="1.1"
+                   NS1:iconURL="chrome://qlprismtools/skin/qlprismnav.png"
+                   NS1:name="QLPrismTools"
+                   NS1:description="QLPrism Helper Tools"
+                   NS1:creator="Various"
+                   NS1:homepageURL="http://www.qlprism.us">
+    <NS1:type NC:parseType="Integer">2</NS1:type>
+    <NS1:contributor>Aaron Boodman and The Greasemonkey Team</NS1:contributor>
+    <NS1:contributor>Wladimir Palant and The Adblock Plus Team</NS1:contributor>
+    <NS1:contributor>Sebastian Tschan</NS1:contributor>
+    <NS1:contributor>The Chatzilla Team</NS1:contributor>
+    <NS1:targetApplication RDF:resource="rdf:#$24eGf1"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mozilla:item:QLDemoPlayer@qldp"
+                   NS1:installLocation="app-profile"
+                   NS1:version="0.3"
+                   NS1:optionsURL="chrome://qldp/content/override.xul"
+                   NS1:iconURL="chrome://qldp/content/qldp.png"
+                   NS1:name="QL Demo Player"
+                   NS1:description="A QUAKE LIVE Demo Player, embedded into the QUAKE LIVE website"
+                   NS1:creator="Andrée &quot;peol&quot; Hansson, ported to Prism by syncore"
+                   NS1:homepageURL="http://www.andreehansson.se/qldp/">
+    <NS1:type NC:parseType="Integer">2</NS1:type>
+    <NS1:targetApplication RDF:resource="rdf:#$i4eGf1"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="rdf:#$i4eGf1"
+                   NS1:id="prism@developer.mozilla.org"
+                   NS1:minVersion="1.0b1"
+                   NS1:maxVersion="10.0.*" />
+  <RDF:Description RDF:about="rdf:#$24eGf1"
+                   NS1:id="prism@developer.mozilla.org"
+                   NS1:minVersion="0.8"
+                   NS1:maxVersion="10.0.*" />
+</RDF:RDF>

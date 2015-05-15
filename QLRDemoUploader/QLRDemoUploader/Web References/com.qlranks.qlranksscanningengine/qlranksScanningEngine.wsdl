@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://qlranksScanningEngine.qlranks.com" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://qlranksScanningEngine.qlranks.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://qlranksScanningEngine.qlranks.com">
+      <s:element name="UpdatePlayer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="playerName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePlayerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdatePlayerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadDemo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="contents" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="extention" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fileSizeBytes" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadDemoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadDemoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckDemoInMd5">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="md5OfDemo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckDemoInMd5Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckDemoInMd5Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlayerElo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="playerName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlayerEloResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPlayerEloResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UpdatePlayerSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePlayer" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlayerSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadDemoSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadDemo" />
+  </wsdl:message>
+  <wsdl:message name="UploadDemoSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadDemoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckDemoInMd5SoapIn">
+    <wsdl:part name="parameters" element="tns:CheckDemoInMd5" />
+  </wsdl:message>
+  <wsdl:message name="CheckDemoInMd5SoapOut">
+    <wsdl:part name="parameters" element="tns:CheckDemoInMd5Response" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerEloSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPlayerElo" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerEloSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPlayerEloResponse" />
+  </wsdl:message>
+  <wsdl:portType name="QlranksScanningEngineServiceSoap">
+    <wsdl:operation name="UpdatePlayer">
+      <wsdl:input message="tns:UpdatePlayerSoapIn" />
+      <wsdl:output message="tns:UpdatePlayerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadDemo">
+      <wsdl:input message="tns:UploadDemoSoapIn" />
+      <wsdl:output message="tns:UploadDemoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckDemoInMd5">
+      <wsdl:input message="tns:CheckDemoInMd5SoapIn" />
+      <wsdl:output message="tns:CheckDemoInMd5SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerElo">
+      <wsdl:input message="tns:GetPlayerEloSoapIn" />
+      <wsdl:output message="tns:GetPlayerEloSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="QlranksScanningEngineServiceSoap" type="tns:QlranksScanningEngineServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdatePlayer">
+      <soap:operation soapAction="http://qlranksScanningEngine.qlranks.com/UpdatePlayer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadDemo">
+      <soap:operation soapAction="http://qlranksScanningEngine.qlranks.com/UploadDemo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDemoInMd5">
+      <soap:operation soapAction="http://qlranksScanningEngine.qlranks.com/CheckDemoInMd5" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerElo">
+      <soap:operation soapAction="http://qlranksScanningEngine.qlranks.com/GetPlayerElo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="QlranksScanningEngineServiceSoap12" type="tns:QlranksScanningEngineServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdatePlayer">
+      <soap12:operation soapAction="http://qlranksScanningEngine.qlranks.com/UpdatePlayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadDemo">
+      <soap12:operation soapAction="http://qlranksScanningEngine.qlranks.com/UploadDemo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDemoInMd5">
+      <soap12:operation soapAction="http://qlranksScanningEngine.qlranks.com/CheckDemoInMd5" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerElo">
+      <soap12:operation soapAction="http://qlranksScanningEngine.qlranks.com/GetPlayerElo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="QlranksScanningEngineService">
+    <wsdl:port name="QlranksScanningEngineServiceSoap" binding="tns:QlranksScanningEngineServiceSoap">
+      <soap:address location="http://qlranksscanningengine.qlranks.com/qlranksScanningEngine.asmx" />
+    </wsdl:port>
+    <wsdl:port name="QlranksScanningEngineServiceSoap12" binding="tns:QlranksScanningEngineServiceSoap12">
+      <soap12:address location="http://qlranksscanningengine.qlranks.com/qlranksScanningEngine.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

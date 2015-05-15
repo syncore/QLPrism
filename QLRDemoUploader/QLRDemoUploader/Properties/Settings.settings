@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="QLRDemoUploader.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="QLRDemoUploader_com_qlranks_qlranksscanningengine_QlranksScanningEngineService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://qlranksscanningengine.qlranks.com/qlranksScanningEngine.asmx</Value>
+    </Setting>
+    <Setting Name="demoPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>

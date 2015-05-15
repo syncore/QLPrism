@@ -1,0 +1,83 @@
+<UserScriptConfig>
+	<Script filename="quakelive_no_inactivity_.user.js" name="QuakeLive No Inactivity &amp; Constant Chat Scrolled View" namespace="qlDontExpireAndChat" description="Stop QL from logging you out after inactivity &amp; keep chat window scrolled to bottom after changing pages" enabled="true" basedir="quakelive_no_inactivity_">
+		<Include>http://*quakelive.com/*</Include>
+	</Script>
+	<Script filename="new_quakelive_adremover.user.js" name="New QuakeLive AdRemover" namespace="userscripts.org" description="" enabled="true" basedir="new_quakelive_adremover">
+		<Include>http://www.quakelive.com/*</Include>
+	</Script>
+	<Script filename="quakelive_player_status.user.js" name="Quakelive Player Status" namespace="userscripts.org" description="Extends QuakeLive chat area" enabled="true" basedir="quakelive_player_status">
+		<Include>http://*.quakelive.com/*</Include>
+		<Exclude>http://*.quakelive.com/forum*</Exclude>
+	</Script>
+	<Script filename="reorganize_quakelive.user.js" name="Reorganize QuakeLive" namespace="http://www.quakelive.com/*" description="" enabled="true" basedir="reorganize_quakelive">
+		<Include>http://*.quakelive.com/* </Include>
+	</Script>
+	<Script filename="ql_gametype_switcher.user.js" name="QL Gametype Switcher" namespace="userscripts.org" description="Script that makes QuakeLive navigation between game types faster and user friendly." enabled="true" basedir="ql_gametype_switcher">
+		<Include>http://*.quakelive.com/*</Include>
+		<Exclude>http://*.quakelive.com/forum*</Exclude>
+	</Script>
+	<Script filename="quake_live_window_mode_e.user.js" name="Quake Live Window Mode Extender" namespace="Lam" description="Adds modes, changes window mode resolution and removes white boxes" enabled="true" basedir="quake_live_window_mode_e">
+		<Include>http://*.quakelive.com/*</Include>
+		<Exclude>http://*.quakelive.com/forum*</Exclude>
+	</Script>
+	<Script filename="quake_live_stream_notifi.user.js" name="Quake Live Stream Notifier" namespace="phob.net" description="Displays a list of live gaming streams on QuakeLive.com and ESReality.com" enabled="false" basedir="quake_live_stream_notifi">
+		<Include>http://*.esreality.com/*</Include>
+		<Include>http://*.quakelive.com/*</Include>
+		<Exclude>http://*.esreality.com/w*</Exclude>
+		<Exclude>http://*.quakelive.com/forum*</Exclude>
+	</Script>
+	<Script filename="quake_live_qlprism_linke.user.js" name="Quake Live QLPrism Linker" namespace="phob.net" description="Show &quot;qlprism://&quot; links on quakelive.com" enabled="true" basedir="quake_live_qlprism_linke">
+		<Include>http://*.quakelive.com/*</Include>
+		<Exclude>http://*.quakelive.com/forum*</Exclude>
+	</Script>
+	<Script filename="quake_live_new_alt_brows.user.js" name="Quake Live New Alt Browser" namespace="http://userscripts.org/scripts/show/73076" description="A new redesign of the Quake Live server browser." enabled="true" basedir="quake_live_new_alt_brows">
+		<Include>http://*.quakelive.com/*</Include>
+		<Exclude>http://*.quakelive.com/forum*</Exclude>
+	</Script>
+	<Script filename="quake_live_weighted_accu.user.js" name="Quake Live Weighted Accuracy" namespace="http://userstyles.org" description="A better accuracy measurement for QuakeLive." enabled="true" basedir="quake_live_weighted_accu">
+		<Include>http://*.quakelive.com/*</Include>
+		<Include>http://*.quakelive.com/profile/statistics/*</Include>
+	</Script>
+	<Script filename="quake_live_autoinvite.user.js" name="Quake Live AutoInvite" namespace="http://userscripts.org" description="Automatically invite friends who send a message to you containing the word &quot;invite&quot;." enabled="true" basedir="quake_live_autoinvite">
+		<Include>http://*.quakelive.com/*</Include>
+	</Script>
+	<Script filename="quake_live_message_beep.user.js" name="Quake Live Message Beep" namespace="http://userscripts.org/users/469998" description="Generates a beep when you get a web message on Quake Live" enabled="true" basedir="quake_live_message_beep">
+		<Include>http://*.quakelive.com/*</Include>
+		<Exclude>http://*.quakelive.com/forum/*</Exclude>
+	</Script>
+	<Script filename="quake_live_friend_comman.user.js" name="Quake Live Friend Commands" namespace="http://userscripts.org/users/469998" description="Send friend and server invites from the Quake Live console" enabled="true" basedir="quake_live_friend_comman">
+		<Include>http://*.quakelive.com/*</Include>
+		<Exclude>http://*.quakelive.com/forum/*</Exclude>
+	</Script>
+	<Script filename="quake_live_background_ch.user.js" name="Quake Live Background Changer" namespace="phob.net" description="Customize the Quake Live background rotation" enabled="true" basedir="quake_live_background_ch">
+		<Include>http://*.quakelive.com/*</Include>
+		<Exclude>http://*.quakelive.com/forum*</Exclude>
+	</Script>
+	<Script filename="quake_live_ingame_friend.user.js" name="Quake Live ingame friend commands" namespace="https://github.com/rulex/ql-friends" description="List online friends in console. Show info about friend who are ingame. Use /join &lt;friend&gt; to join friends game" enabled="true" basedir="quake_live_ingame_friend">
+		<Include>http://*.quakelive.com/*</Include>
+	</Script>
+	<Script filename="linkify_plus_for_quake_l.user.js" name="Linkify Plus for Quake Live" namespace="http://userscripts.org/users/289185" description="Turn plain text URLs into links and turn link into the color you want.  Works in Quake Live." enabled="true" basedir="linkify_plus_for_quake_l">
+		<Include>http://*.quakelive.com/*</Include>
+		<Exclude>http://*.quakelive.com/forum*</Exclude>
+	</Script>
+	<Script filename="quake_live_extended_stat.user.js" name="Quake Live Extended Stats" namespace="http://userscripts.org/scripts/show/126719" description="Additional stats (like net frags and damage, game location and weapon shots) on Match Details." enabled="true" basedir="quake_live_extended_stat">
+		<Include>http://*.quakelive.com/*</Include>
+		<Exclude>http://*.quakelive.com/forum*</Exclude>
+	</Script>
+	<Script filename="ql_messenger.user.js" name="QL Messenger" namespace="qlprism.us" description="Embeds QLM into QL site" enabled="true" basedir="ql_messenger">
+		<Include>http://*.quakelive.com/*</Include>
+		<Exclude>http://*.quakelive.com/forum*</Exclude>
+	</Script>
+	<Script filename="qlrankscom_display.user.js" name="QLRanks.com Display" namespace="phob.net" description="Overlay quakelive.com with Elo data from QLRanks.com" enabled="true" basedir="qlrankscom_display">
+		<Include>http://*.quakelive.com/*</Include>
+		<Exclude>http://*.quakelive.com/forum*</Exclude>
+	</Script>
+	<Script filename="playquake_team_informati.user.js" name="PlayQuake Team Information" namespace="playquake.com" description="Get the latest teams for a certain Quakelive server used in a pickup-game" enabled="true" basedir="playquake_team_informati">
+		<Include>http://*.quakelive.com/*</Include>
+		<Exclude>http://*.quakelive.com/forum/*</Exclude>
+	</Script>
+	<Script filename="qlping_quakelivecom_udp_.user.js" name="QLPing, quakelive.com udp ping utility" namespace="name.space" description="Shows ping of servers on www.quakelive.com website" enabled="true" basedir="qlping_quakelivecom_udp_">
+		<Include>http://*.quakelive.com/*</Include>
+		<Exclude>http://*.quakelive.com/forum*</Exclude>
+	</Script>
+</UserScriptConfig>

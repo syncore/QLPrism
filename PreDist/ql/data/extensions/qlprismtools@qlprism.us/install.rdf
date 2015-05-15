@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+    <Description about="urn:mozilla:install-manifest">
+        <em:id>qlprismtools@qlprism.us</em:id>
+        <em:version>1.1</em:version>
+        <em:type>2</em:type>
+        <em:unpack>true</em:unpack>
+
+<em:targetApplication>
+      <Description>
+        <!-- prism -->
+        <em:id>prism@developer.mozilla.org</em:id>
+        <em:minVersion>0.8</em:minVersion>
+        <em:maxVersion>10.0.*</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+
+        <!-- Description -->
+        <em:name>QLPrismTools</em:name>
+        <em:description>QLPrism Helper Tools</em:description>
+        <em:creator>Various</em:creator>
+        <em:contributor>Aaron Boodman and The Greasemonkey Team</em:contributor>
+        <em:contributor>Wladimir Palant and The Adblock Plus Team</em:contributor>
+        <em:contributor>Sebastian Tschan</em:contributor>
+        <em:contributor>The Chatzilla Team</em:contributor>
+        <em:iconURL>chrome://qlprismtools/skin/qlprismnav.png</em:iconURL>
+        <em:homepageURL>http://www.qlprism.us</em:homepageURL>
+    </Description>
+</RDF>
+

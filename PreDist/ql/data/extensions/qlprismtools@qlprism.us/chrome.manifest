@@ -1,0 +1,112 @@
+# navigation and ql account manager (SL)
+content qlprismtools jar:chrome/qlpts.qla!/content/navandsl/
+locale qlprismtools en-US jar:chrome/qlpts.qla!/content/navandsl/locale/en-US/
+skin qlprismtools classic/1.0 jar:chrome/qlpts.qla!/content/navandsl/skin/classic/
+overlay chrome://webrunner/content/webrunner.xul chrome://qlprismtools/content/login.xul os=WINNT
+overlay chrome://webrunner/content/webrunner-linux.xul chrome://qlprismtools/content/login.xul os=Linux
+overlay chrome://webrunner/content/webrunner.xul chrome://qlprismtools/content/nav.xul os=WINNT
+overlay chrome://webrunner/content/webrunner-linux.xul chrome://qlprismtools/content/nav-linux.xul os=Linux
+style chrome://browser/content/browser.xul chrome://qlprismtools/skin/sl1.5.css	appversion<2.0
+style chrome://browser/content/browser.xul chrome://qlprismtools/skin/slMac.css	appversion>=3.0 os=Darwin
+style chrome://global/content/customizeToolbar.xul chrome://qlprismtools/skin/sl.css
+style chrome://global/content/customizeToolbar.xul chrome://qlprismtools/skin/slMac.css	appversion>=3.0 os=Darwin
+style chrome://qlprismtools/content/qlprismtoolsOptions.xul chrome://qlprismtools/skin/slOptions1.5.css appversion<2.0
+style chrome://webrunner/content/webrunner.xul chrome://qlprismtools/skin/overlay.css os=WINNT
+style chrome://webrunner/content/webrunner-linux.xul chrome://qlprismtools/skin/overlay.css os=Linux
+
+# adblock plus
+content   adblockplus jar:chrome/qlpts.qla!/content/abp/chrome/content/
+content   adblockplus-defaults defaults/
+content   adblockplus-modules modules/
+locale    adblockplus ar jar:chrome/qlpts.qla!/content/abp/chrome/locale/ar/
+locale    adblockplus bg jar:chrome/qlpts.qla!/content/abp/chrome/locale/bg/
+locale    adblockplus ca jar:chrome/qlpts.qla!/content/abp/chrome/locale/ca/
+locale    adblockplus cs jar:chrome/qlpts.qla!/content/abp/chrome/locale/cs/
+locale    adblockplus da jar:chrome/qlpts.qla!/content/abp/chrome/locale/da/
+locale    adblockplus de jar:chrome/qlpts.qla!/content/abp/chrome/locale/de/
+locale    adblockplus el jar:chrome/qlpts.qla!/content/abp/chrome/locale/el/
+locale    adblockplus en-GB jar:chrome/qlpts.qla!/content/abp/chrome/locale/en-GB/
+locale    adblockplus en-US jar:chrome/qlpts.qla!/content/abp/chrome/locale/en-US/
+locale    adblockplus eo jar:chrome/qlpts.qla!/content/abp/chrome/locale/eo/
+locale    adblockplus es-AR jar:chrome/qlpts.qla!/content/abp/chrome/locale/es-AR/
+locale    adblockplus es-ES jar:chrome/qlpts.qla!/content/abp/chrome/locale/es-ES/
+locale    adblockplus es-MX jar:chrome/qlpts.qla!/content/abp/chrome/locale/es-MX/
+locale    adblockplus et jar:chrome/qlpts.qla!/content/abp/chrome/locale/et/
+locale    adblockplus fa jar:chrome/qlpts.qla!/content/abp/chrome/locale/fa/
+locale    adblockplus fi jar:chrome/qlpts.qla!/content/abp/chrome/locale/fi/
+locale    adblockplus fr jar:chrome/qlpts.qla!/content/abp/chrome/locale/fr/
+locale    adblockplus fy-NL jar:chrome/qlpts.qla!/content/abp/chrome/locale/fy-NL/
+locale    adblockplus gl jar:chrome/qlpts.qla!/content/abp/chrome/locale/gl/
+locale    adblockplus he jar:chrome/qlpts.qla!/content/abp/chrome/locale/he/
+locale    adblockplus hr jar:chrome/qlpts.qla!/content/abp/chrome/locale/hr/
+locale    adblockplus hsb jar:chrome/qlpts.qla!/content/abp/chrome/locale/hsb/
+locale    adblockplus hu jar:chrome/qlpts.qla!/content/abp/chrome/locale/hu/
+locale    adblockplus hy-AM jar:chrome/qlpts.qla!/content/abp/chrome/locale/hy-AM/
+locale    adblockplus is jar:chrome/qlpts.qla!/content/abp/chrome/locale/is/
+locale    adblockplus it jar:chrome/qlpts.qla!/content/abp/chrome/locale/it/
+locale    adblockplus ja jar:chrome/qlpts.qla!/content/abp/chrome/locale/ja/
+locale    adblockplus ka-GE jar:chrome/qlpts.qla!/content/abp/chrome/locale/ka-GE/
+locale    adblockplus kk-KZ jar:chrome/qlpts.qla!/content/abp/chrome/locale/kk-KZ/
+locale    adblockplus ko jar:chrome/qlpts.qla!/content/abp/chrome/locale/ko/
+locale    adblockplus lt jar:chrome/qlpts.qla!/content/abp/chrome/locale/lt/
+locale    adblockplus lv jar:chrome/qlpts.qla!/content/abp/chrome/locale/lv/
+locale    adblockplus mn jar:chrome/qlpts.qla!/content/abp/chrome/locale/mn/
+locale    adblockplus ms-MY jar:chrome/qlpts.qla!/content/abp/chrome/locale/ms-MY/
+locale    adblockplus nl jar:chrome/qlpts.qla!/content/abp/chrome/locale/nl/
+locale    adblockplus pl jar:chrome/qlpts.qla!/content/abp/chrome/locale/pl/
+locale    adblockplus pt-BR jar:chrome/qlpts.qla!/content/abp/chrome/locale/pt-BR/
+locale    adblockplus pt-PT jar:chrome/qlpts.qla!/content/abp/chrome/locale/pt-PT/
+locale    adblockplus ro jar:chrome/qlpts.qla!/content/abp/chrome/locale/ro/
+locale    adblockplus ru jar:chrome/qlpts.qla!/content/abp/chrome/locale/ru/
+locale    adblockplus sk jar:chrome/qlpts.qla!/content/abp/chrome/locale/sk/
+locale    adblockplus sl jar:chrome/qlpts.qla!/content/abp/chrome/locale/sl/
+locale    adblockplus sq jar:chrome/qlpts.qla!/content/abp/chrome/locale/sq/
+locale    adblockplus sr jar:chrome/qlpts.qla!/content/abp/chrome/locale/sr/
+locale    adblockplus sv-SE jar:chrome/qlpts.qla!/content/abp/chrome/locale/sv-SE/
+locale    adblockplus th jar:chrome/qlpts.qla!/content/abp/chrome/locale/th/
+locale    adblockplus tr jar:chrome/qlpts.qla!/content/abp/chrome/locale/tr/
+locale    adblockplus uk jar:chrome/qlpts.qla!/content/abp/chrome/locale/uk/
+locale    adblockplus vi jar:chrome/qlpts.qla!/content/abp/chrome/locale/vi/
+locale    adblockplus zh-CN jar:chrome/qlpts.qla!/content/abp/chrome/locale/zh-CN/
+locale    adblockplus zh-TW jar:chrome/qlpts.qla!/content/abp/chrome/locale/zh-TW/
+skin      adblockplus classic/1.0 jar:chrome/qlpts.qla!/content/abp/chrome/skin/
+skin      adblockplus_icon classic/1.0 jar:chrome/qlpts.qla!/content/abp/
+overlay   chrome://browser/content/browser.xul chrome://adblockplus/content/ui/fennecOverlay.xul application={a23983c0-fd0e-11dc-95ff-0800200c9a66}
+overlay   chrome://browser/content/browser.xul chrome://adblockplus/content/ui/firefoxOverlay.xul application={ec8030f7-c20a-464f-9b0e-13a3a9e97384} application=songbird@songbirdnest.com
+overlay   chrome://messenger/content/mailWindowOverlay.xul chrome://adblockplus/content/ui/mailOverlay.xul application={92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}
+overlay   chrome://messenger/content/msgHdrViewOverlay.xul chrome://adblockplus/content/ui/thunderbirdOverlay.xul application={3550f703-e582-4d05-9a08-453d09bdfdc6}
+overlay   chrome://navigator/content/navigator.xul chrome://adblockplus/content/ui/seamonkeyOverlay.xul application={92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}
+overlay   chrome://webrunner/content/webrunner.xul chrome://adblockplus/content/ui/prismOverlay.xul application=prism@developer.mozilla.org os=WINNT
+overlay   chrome://webrunner/content/webrunner-linux.xul chrome://adblockplus/content/ui/prismOverlay.xul application=prism@developer.mozilla.org os=Linux
+override  chrome://adblockplus/skin/adblockplus.png chrome://adblockplus_icon/icon.png
+style     chrome://adblockplus/content/ui/firstRun.xul chrome://browser/skin/platform.css application={a23983c0-fd0e-11dc-95ff-0800200c9a66}
+style     chrome://global/content/customizeToolbar.xul chrome://adblockplus/skin/overlay.css
+component {d32a3c00-4ed3-11de-8a39-0800200c9a66} components/Initializer.js
+contract @adblockplus.org/abp/startup;1 {d32a3c00-4ed3-11de-8a39-0800200c9a66}
+category profile-after-change @adblockplus.org/abp/startup;1 @adblockplus.org/abp/startup;1
+override chrome://adblockplus/content/ui/settings.xul chrome://adblockplus/content/ui/fennecSettings.xul application={a23983c0-fd0e-11dc-95ff-0800200c9a66}
+override chrome://dotnetassistant/content/bootstrap.xul data:text/xml,<nada/>
+
+#chatzilla
+content  chatzilla-sm jar:chrome/qlpts.qla!/content/irc/chrome/content/chatzilla/sm/
+content chatzilla jar:chrome/qlpts.qla!/content/irc/chrome/content/chatzilla/
+content chatzilla-ff jar:chrome/qlpts.qla!/content/irc/chrome/content/chatzilla/ff/
+locale chatzilla en-US jar:chrome/qlpts.qla!/content/irc/chrome/locale/en-US/chatzilla/
+skin    chatzilla modern/1.0 jar:chrome/qlpts.qla!/content/irc/chrome/skin/modern/chatzilla/
+overlay   chrome://webrunner/content/webrunner.xul chrome://chatzilla/content/browserOverlay.xul os=WINNT
+overlay   chrome://webrunner/content/webrunner-linux.xul chrome://chatzilla/content/browserOverlay.xul os=Linux
+style   chrome://webrunner/content/webrunner.xul chrome://chatzilla/skin/browserOverlay.css os=WINNT
+style   chrome://webrunner/content/webrunner-linux.xul chrome://chatzilla/skin/browserOverlay.css os=Linux
+category command-line-handler m-irc @mozilla.org/commandlinehandler/general-startup;1?type=chat
+component {38a95514-1dd2-11b2-97e7-9da958640f2c} components/chatzilla-service.js
+component {f21c35f4-1dd1-11b2-a503-9bf8a539ea39} components/chatzilla-service.js
+contract @mozilla.org/network/protocol;1?name=irc {f21c35f4-1dd1-11b2-a503-9bf8a539ea39}
+contract @mozilla.org/network/protocol;1?name=ircs {f21c35f4-1dd1-11b2-a503-9bf8a539ea39}
+
+#greasemonkey
+content    greasemonkey    jar:chrome/qlpts.qla!/content/gm/content/
+locale  greasemonkey  en-US  jar:chrome/qlpts.qla!/content/gm/locale/en-US/
+overlay    chrome://webrunner/content/webrunner.xul     chrome://greasemonkey/content/browser.xul os=WINNT
+overlay    chrome://webrunner/content/webrunner-linux.xul     chrome://greasemonkey/content/browser.xul os=Linux
+component {77bf3650-1cd6-11da-8cd6-0800200c9a66} components/greasemonkey.js
+contract @greasemonkey.mozdev.org/greasemonkey-service;1 {77bf3650-1cd6-11da-8cd6-0800200c9a66}

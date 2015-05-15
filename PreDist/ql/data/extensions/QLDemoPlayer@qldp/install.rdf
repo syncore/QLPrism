@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+	<Description about="urn:mozilla:install-manifest">
+		<em:id>QLDemoPlayer@qldp</em:id>
+		<em:version>0.3</em:version>
+		<em:type>2</em:type>
+		<em:unpack>true</em:unpack>
+   
+<em:targetApplication>
+      <Description>
+        <!-- prism -->
+        <em:id>prism@developer.mozilla.org</em:id>
+        <em:minVersion>1.0b1</em:minVersion>
+        <em:maxVersion>10.0.*</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+
+		<!-- Description -->
+		<em:name>QL Demo Player</em:name>
+		<em:description>A QUAKE LIVE Demo Player, embedded into the QUAKE LIVE website</em:description>
+		<em:creator>Andrée "peol" Hansson, ported to Prism by syncore</em:creator>
+		<em:iconURL>chrome://qldp/content/qldp.png</em:iconURL>
+		<em:homepageURL>http://www.andreehansson.se/qldp/</em:homepageURL>
+    <em:optionsURL>chrome://qldp/content/override.xul</em:optionsURL>
+	</Description>      
+</RDF>
+

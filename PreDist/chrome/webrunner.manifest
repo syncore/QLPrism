@@ -1,0 +1,8 @@
+locale branding en-US jar:webrunner.qla!/branding/
+override chrome://global/content/contentAreaUtils.js chrome://webrunner/content/contentAreaUtils.js
+override chrome://global/skin/scrollbars.css chrome://webrunner/skin/resources/scrollbars.css
+overlay chrome://mozapps/content/downloads/unknownContentType.xul chrome://webrunner/content/unknownContentType.xul
+content browser jar:webrunner.qla!/content/
+resource prism ..
+content branding jar:webrunner.qla!/branding/
+content webrunner jar:webrunner.qla!/content/ xpcnativewrappers=no

@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<window id="qldp-override" title="QLDP Override Settings" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<script>
+var prefs = Components.classes["@mozilla.org/preferences-service;1"]
+			.getService(Components.interfaces.nsIPrefService);
+
+		prefs = prefs.getBranch("extensions.qldp.");
+
+var override = {
+	save: function () {
+		// Get the "extensions.myext." branch
+		var str = Components.classes["@mozilla.org/supports-string;1"]
+			.createInstance(Components.interfaces.nsISupportsString);
+
+		// Path
+		str.data = document.getElementById('qldp-override-path').value;
+
+		prefs.setComplexValue("path", 
+			Components.interfaces.nsISupportsString, str);
+
+		// Demo cfg
+		str.data = document.getElementById('qldp-override-democfg').value;
+
+		prefs.setComplexValue("democfg", 
+			Components.interfaces.nsISupportsString, str);
+
+		// Fullscreen
+		str.data = document.getElementById('qldp-override-fullscreen').value;
+
+		prefs.setComplexValue("fullscreen", 
+			Components.interfaces.nsISupportsString, str);
+
+		// Screenshots
+//		str.data = document.getElementById('qldp-override-screens').value;
+
+//		prefs.setComplexValue("screens", 
+//			Components.interfaces.nsISupportsString, str);
+
+		window.alert('Your settings were saved.');
+		window.close();
+	},
+
+	init: function () {
+		try {
+			document.getElementById('qldp-override-path').value = prefs.getComplexValue('path', Components.interfaces.nsISupportsString).data;
+			document.getElementById('qldp-override-democfg').value = prefs.getComplexValue('democfg', Components.interfaces.nsISupportsString).data;
+			document.getElementById('qldp-override-fullscreen').value = prefs.getComplexValue('fullscreen', Components.interfaces.nsISupportsString).data;
+//			document.getElementById('qldp-override-screens').value = prefs.getComplexValue('screens', Components.interfaces.nsISupportsString).data;
+		} catch (e) { window.alert(e); }
+	}
+}
+
+document.addEventListener('DOMContentLoaded', override.init, true);
+</script>
+
+<label for="" value="Manual override path (leave empty to auto-detect)" />
+<textbox id="qldp-override-path" value=""/>
+
+<spacer style="height: 1px; margin: 10px; " />
+<label for="" value="Manually set demo configuration file (default: demo.cfg)" />
+<textbox id="qldp-override-democfg" value=""/>
+
+<spacer style="height: 1px; margin: 10px; " />
+<label for="" value="Start in fullscreen (default: 1)" />
+<textbox id="qldp-override-fullscreen" value=""/>
+
+<!--<spacer style="height: 1px; margin: 10px; " />
+<label for="" value="Show end-game screenshots as tooltips (default: 1)" />
+<textbox id="qldp-override-screens" value=""/>-->
+
+<spacer style="height: 1px; margin: 10px; " />
+<spacer style="background-color: #999; height: 1px; margin: 10px; " />
+<button label="Save" oncommand="override.save()" />
+</window>

@@ -1,0 +1,961 @@
+<aiw2project project-file-version="6">
+  <cs-general>
+    <application-name value="QLPrism" />
+    <application-version value="4.400" />
+    <company-name value="syncore" />
+    <install-path value="&lt;InstallDir&gt;\QLPrism" reg-root-key="2" reg-path="Software\QLPrism" read-from-registry="0" reg-value="Directory" />
+    <shortcut-path value="&lt;AppName&gt;" all-users-start-menu="0" />
+    <update-installation value="0" />
+    <allow-clean-install value="1" />
+    <prompt-before-running value="0" />
+    <silent-installation value="0" />
+  </cs-general>
+  <cs-dialogs>
+    <dialog selected="0" title="Language" project-relative-path="0" display-once="0" template="Themes\Windows Installer theme\Language.adt" />
+    <dialog selected="1" title="Welcome" project-relative-path="0" display-once="0" template="Themes\Windows Installer theme\Welcome.adt" />
+    <dialog selected="0" title="License agreement" project-relative-path="0" display-once="0" template="Themes\Windows Installer theme\License.adt" />
+    <dialog selected="1" title="Readme" project-relative-path="0" display-once="0" template="Themes\Windows Installer theme\Readme.adt" />
+    <dialog selected="0" title="System information" project-relative-path="0" display-once="0" template="Themes\Windows Installer theme\Sysinfo.adt" />
+    <dialog selected="0" title="User information" project-relative-path="0" display-once="0" template="Themes\Windows Installer theme\Userinfo.adt" />
+    <dialog selected="1" title="Select destination directory" project-relative-path="0" display-once="0" template="Themes\Windows Installer theme\Destdir.adt" />
+    <dialog selected="1" title="Configuration" project-relative-path="0" display-once="0" template="Themes\Windows Installer Theme\qlprism-minimize.adt" />
+    <dialog selected="0" title="Plugin" project-relative-path="0" display-once="0" template="Themes\Windows Installer Theme\qlprism-plugin.adt" />
+    <dialog selected="1" title="ELO" project-relative-path="0" display-once="0" template="Themes\Windows Installer Theme\qlprism-elo.adt" />
+    <dialog selected="1" title="PING" project-relative-path="0" display-once="0" template="Themes\Windows Installer Theme\qlprism-ping.adt" />
+    <dialog selected="1" title="IRC" project-relative-path="0" display-once="0" template="Themes\Windows Installer Theme\qlprism-irc.adt" />
+    <dialog selected="1" title="Xfire" project-relative-path="0" display-once="0" template="Themes\Windows Installer Theme\qlprism-xfire.adt">
+      <condition osmask="-2147483647">
+        <advanced-condition operator="Equals" value1="&lt;HasXfire64&gt;" value2="1" />
+        <advanced-condition operator="Equals" value1="&lt;HasXfire32&gt;" value2="1" />
+      </condition>
+    </dialog>
+    <dialog selected="1" title="mIRC Support" project-relative-path="0" display-once="0" template="Themes\Windows Installer Theme\mircsupport.adt" />
+    <dialog selected="0" title="Select shortcut folder" project-relative-path="0" display-once="0" template="Themes\Windows Installer theme\Shortcutdir.adt" />
+    <dialog selected="0" title="Installation type" project-relative-path="0" display-once="0" template="Themes\Windows Installer theme\Installtype.adt" />
+    <dialog selected="0" title="Options" project-relative-path="0" display-once="0" template="Themes\Windows Installer theme\Options.adt" />
+    <dialog selected="0" title="Summary" project-relative-path="0" display-once="0" template="Themes\Windows Installer theme\Summary.adt" />
+    <dialog selected="1" title="Installing" project-relative-path="0" display-once="0" template="Themes\Windows Installer theme\Installing.adt" />
+    <dialog selected="1" title="Steam" project-relative-path="0" display-once="0" template="Themes\Windows Installer Theme\qlprism-steam.adt">
+      <condition osmask="-2147483647">
+        <advanced-condition operator="Equals" value1="&lt;HasSteam32&gt;" value2="1" />
+        <advanced-condition operator="Equals" value1="&lt;HasSteam64&gt;" value2="1" />
+      </condition>
+    </dialog>
+    <dialog selected="0" title="Launch QLPrism" project-relative-path="0" display-once="0" template="Themes\Windows Installer Theme\qlprism-launch.adt" />
+    <dialog selected="1" title="Finished" project-relative-path="0" display-once="0" template="Themes\Windows Installer theme\Finished.adt" />
+    <dialog selected="1" title="Uninstall" project-relative-path="0" display-once="0" template="Themes\Windows Installer theme\Uninstall.adt" />
+    <scale value="1" />
+  </cs-dialogs>
+  <cs-dialogs-language>
+    <language project-relative-path="0" filename="LanguageSets\lang_eng.als" />
+    <default-language value="0" />
+    <dialog-title value="Select language" />
+    <dialog-text value="Please select the language that you would like to use during the installation." />
+    <use-dialog-strings value="1" />
+  </cs-dialogs-language>
+  <cs-dialogs-readme>
+    <text value="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Tahoma;}}&#013;&#010;{\colortbl ;\red255\green0\blue0;}&#013;&#010;\viewkind4\uc1\pard\ul\b\f0\fs20 QLPrism 4.40 (August 2, 2013)\par&#013;&#010;\ulnone\b0 by syncore &lt;syncore@qlprism.us&gt;\par&#013;&#010;http://www.qlprism.us\par&#013;&#010;http://www.qlprism.us/forum\par&#013;&#010; \ul\b\par&#013;&#010;\cf1 First time QLPrism users:\ulnone\b0\par&#013;&#010;\cf0\par&#013;&#010;\b Coming from Internet Explorer to QLPrism (ignore if coming from Firefox or Chrome to QLPrism):\b0\par&#013;&#010;\par&#013;&#010;If you are coming from Internet Explorer, you will need to install the Quake Live plug-in to play QL on QLPrism. QLPrism will download the Quake Live plug-in from the QL website AFTER you first log in to your QL account. The plugin's installer file (QuakeLiveNP_###.msi) \b\i will be saved to your desktop.\par&#013;&#010;\b0\i0\par&#013;&#010;\b Your game data and settings will not be changed:\par&#013;&#010;\b0 Remember, if you already have QL installed, your game data and settings will \cf1 NOT\cf0  be touched or modified at any time!\ul\b\par&#013;&#010;}&#013;&#010;" language="0" />
+    <text value="" language="1" />
+  </cs-dialogs-readme>
+  <cs-dialogs-license>
+    <text value="" language="0" />
+    <text value="" language="1" />
+    <direct-approval value="0" />
+    <prohibit-silent-installation value="0" />
+  </cs-dialogs-license>
+  <cs-dialogs-sysinfo>
+    <item selected="0" index="0" />
+    <item selected="0" index="1" />
+    <item selected="0" index="2" />
+    <item selected="0" index="3" />
+    <item selected="0" index="4" />
+    <item selected="0" index="5" />
+    <item selected="0" index="6" />
+    <item selected="0" index="7" />
+    <item selected="0" index="8" />
+    <item selected="0" index="9" />
+    <item selected="0" index="10" />
+    <item selected="0" index="11" />
+    <item selected="0" index="12" />
+    <item selected="0" index="13" />
+    <tentative value="0" />
+  </cs-dialogs-sysinfo>
+  <cs-dialogs-userinfo>
+    <user-name selected="0" required="0" />
+    <company-name selected="0" required="0" />
+    <serial selected="0" required="0" />
+    <show-confirmation selected="0" />
+    <delimited-style selected="0" field1="4" field2="4" field3="4" />
+    <serial-codes value="" />
+  </cs-dialogs-userinfo>
+  <cs-dialogs-options>
+    <show-lines-at-tree-root selected="0" />
+    <show-sub-process-progress selected="0" />
+    <show-restart-computer selected="0" force="0" />
+    <show-launch-program selected="1" file="&lt;InstallDir&gt;\quakelive.exe" default="1" />
+    <show-open-readme selected="0" file="" default="0" />
+  </cs-dialogs-options>
+  <cs-dialogs-uninstall>
+    <add-remove-dialog comments="QLPrism Light-weight Quake Live Launcher" selected="1" publisher="&lt;CompanyName&gt;" title="&lt;AppName&gt;" publisher-url="http://www.qlprism.us" support-url="http://www.qlprism.us/faq/" version="&lt;AppVersion&gt;" update-url="" icon="" />
+    <custom-uninstaller command-line="-kill &quot;quakelive.exe&quot; -kill &quot;qlprism-steamxfire.exe&quot; -kill &quot;qlprism-config.exe&quot; -rfr &quot;&lt;InstallDir&gt;\QLPrism\* &quot; -rfr &quot;&lt;InstallDir&gt;\QuakeLive\*&quot; -rfr &quot;&lt;InstallDir&gt;\QuakeLive\Profiles\*&quot; -rfr &quot;&lt;InstallDir&gt;\QuakeLive\Profiles\ql.profile\*&quot; -rfr &quot;&lt;InstallDir&gt;\QuakeLive\Profiles\ql.profile\irc*&quot; -rdr &quot;&lt;InstallDir&gt;\QuakeLive\Profiles\ql.profile\irc\*&quot; -rd &quot;&lt;InstallDir&gt;\QuakeLive\Profiles\ql.profile\irc&quot; -rfr &quot;&lt;InstallDir&gt;\QuakeLive\Profiles\ql.profile\cache\*&quot; -rfr &quot;&lt;InstallDir&gt;\Extensions\*&quot; -rdr &quot;&lt;InstallDir&gt;\QuakeLive\*&quot; -rd &quot;&lt;InstallDir&gt;\QuakeLive&quot; -rfr &quot;&lt;InstallDir&gt;\ql\*&quot; -rfr &quot;&lt;InstallDir&gt;\ql\data\*&quot; -rfr &quot;&lt;InstallDir&gt;\QuakeLive\data\*&quot; -rfr &quot;&lt;InstallDir&gt;\ql\data\irc*&quot; -rdr &quot;&lt;InstallDir&gt;\ql\irc\*&quot; -rd &quot;&lt;InstallDir&gt;\ql\irc&quot; -rfr &quot;&lt;InstallDir&gt;\ql\data\cache\*&quot; -rfr &quot;&lt;InstallDir&gt;\ql\data\Cache\*&quot; -rfr &quot;&lt;InstallDir&gt;\demouploader\*&quot; -rdr &quot;&lt;InstallDir&gt;\demouploader\*&quot; -rdr &quot;&lt;InstallDir&gt;\ql\data\Cache\*&quot; -rd &quot;&lt;InstallDir&gt;\ql\*&quot; -rd &quot;&lt;InstallDir&gt;\ql\demouploader&quot; -rdr &quot;&lt;InstallDir&gt;\Extensions*&quot; -rd &quot;&lt;InstallDir&gt;\Extensions&quot; -rd &quot;&lt;InstallDir&gt;\ql\data\Cache&quot; -rdr &quot;&lt;InstallDir&gt;\ql\*&quot; -rd &quot;&lt;InstallDir&gt;\ql&quot; -rdr &quot;&lt;InstallDir&gt;\QLPrism\*&quot; -rd &quot;&lt;InstallDir&gt;\QLPrism&quot;" file="&lt;WindowsDir&gt;\qlprism-uninstall.exe" />
+    <uninstaller-name value="&lt;WindowsDir&gt;\&lt;AppNameInFileNameFormat&gt; Uninstaller.exe" />
+    <no-uninstallation selected="0" />
+  </cs-dialogs-uninstall>
+  <cs-files>
+    <installation-item name="Application files" description="Minimum files required for the application to run." flags="1">
+      <files>
+        <folder value=".." relative="1" expanded="1">
+          <file runtime-location="" name="qlprism-readme.txt" destination-modified="0" destination="&lt;InstallDir&gt;" reg-priority="1" overwrite-mode="0" attributes="97" />
+        </folder>
+        <folder value="C:\stuff\qlprism project files\" relative="0" expanded="1">
+          <file runtime-location="" name="autoexec.cfg" destination-modified="0" destination="&lt;LocalAppData&gt;\..\LocalLow\id Software\quakelive\home\baseq3" reg-priority="1" overwrite-mode="2" attributes="353">
+            <condition osmask="-2147482880">
+              <advanced-condition operator="Equals" value1="&lt;qlranksA&gt;" value2="1" />
+              <advanced-condition operator="Equals" value1="&lt;qlranksB&gt;" value2="0" />
+            </condition>
+          </file>
+          <file runtime-location="" name="autoexec.cfg" destination-modified="0" destination="&lt;RoamingAppData&gt;\id Software\quakelive\home\baseq3" reg-priority="1" overwrite-mode="2" attributes="353">
+            <condition osmask="-2147483424">
+              <advanced-condition operator="Equals" value1="&lt;qlranksA&gt;" value2="1" />
+              <advanced-condition operator="Equals" value1="&lt;qlranksB&gt;" value2="0" />
+            </condition>
+          </file>
+          <file runtime-location="" name="qlping.cfg" destination-modified="0" destination="&lt;LocalAppData&gt;\..\LocalLow\id Software\quakelive\home\baseq3" reg-priority="1" overwrite-mode="3" attributes="16481">
+            <condition osmask="-2147482880">
+              <advanced-condition operator="Equals" value1="&lt;pingA&gt;" value2="1" />
+              <advanced-condition operator="Equals" value1="&lt;pingB&gt;" value2="0" />
+            </condition>
+          </file>
+          <file runtime-location="" name="qlping.cfg" destination-modified="0" destination="&lt;RoamingAppData&gt;\id Software\quakelive\home\baseq3" reg-priority="1" overwrite-mode="3" attributes="16481">
+            <condition osmask="-2147483424">
+              <advanced-condition operator="Equals" value1="&lt;pingA&gt;" value2="1" />
+              <advanced-condition operator="Equals" value1="&lt;pingB&gt;" value2="0" />
+            </condition>
+          </file>
+          <file runtime-location="" name="qlranks-elo.cfg" destination-modified="0" destination="&lt;LocalAppData&gt;\..\LocalLow\id Software\quakelive\home\baseq3" reg-priority="1" overwrite-mode="3" attributes="16481">
+            <condition osmask="-2147482880">
+              <advanced-condition operator="Equals" value1="&lt;qlranksA&gt;" value2="1" />
+              <advanced-condition operator="Equals" value1="&lt;qlranksB&gt;" value2="0" />
+            </condition>
+          </file>
+          <file runtime-location="" name="qlranks-elo.cfg" destination-modified="0" destination="&lt;RoamingAppData&gt;\id Software\quakelive\home\baseq3" reg-priority="1" overwrite-mode="3" attributes="16481">
+            <condition osmask="-2147483424">
+              <advanced-condition operator="Equals" value1="&lt;qlranksA&gt;" value2="1" />
+              <advanced-condition operator="Equals" value1="&lt;qlranksB&gt;" value2="0" />
+            </condition>
+          </file>
+        </folder>
+        <folder value="." relative="1" expanded="1">
+          <file runtime-location="" name="qlprism-uninstall.exe" destination-modified="1" destination="&lt;WindowsDir&gt;" reg-priority="1" overwrite-mode="2" attributes="353" />
+        </folder>
+        <folder value="C:\stuff\qlprism project files\mirc link support\" relative="0" expanded="1">
+          <file runtime-location="" name="qlprism" destination-modified="0" destination="&lt;WindowsDir&gt;" reg-priority="1" overwrite-mode="0" attributes="353" />
+        </folder>
+        <folder value="C:\stuff\qlprism project files\qlping plugin\" relative="0" expanded="1">
+          <file runtime-location="" name="npqlping.dll" destination-modified="0" destination="&lt;LocalAppData&gt;\qlPing\0.0.1.0" reg-priority="1" overwrite-mode="3" attributes="16481" />
+        </folder>
+        <folder value="C:\stuff\qlprism project files\builds\windows\qlprism\" relative="0" expanded="1">
+          <file-set flat="0" dynamic="0" destination="&lt;InstallDir&gt;" mask="*.*" recursive="1" exclude-mask="0" expanded="0">
+            <file runtime-location="" name="application.ini" destination-modified="0" destination="&lt;InstallDir&gt;" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="msvcr110.dll" destination-modified="0" destination="&lt;InstallDir&gt;" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="qlprism-steamxfire.exe" destination-modified="0" destination="&lt;InstallDir&gt;" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="QLPrismUpdate.dll" destination-modified="0" destination="&lt;InstallDir&gt;" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="quakelive-highpriority.exe" destination-modified="0" destination="&lt;InstallDir&gt;" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="quakelive.exe" destination-modified="0" destination="&lt;InstallDir&gt;" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="chrome\classic.manifest" destination-modified="0" destination="&lt;InstallDir&gt;\chrome" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="chrome\classic.qla" destination-modified="0" destination="&lt;InstallDir&gt;\chrome" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="chrome\en-US.manifest" destination-modified="0" destination="&lt;InstallDir&gt;\chrome" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="chrome\en-US.qla" destination-modified="0" destination="&lt;InstallDir&gt;\chrome" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="chrome\webrunner.manifest" destination-modified="0" destination="&lt;InstallDir&gt;\chrome" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="chrome\webrunner.qla" destination-modified="0" destination="&lt;InstallDir&gt;\chrome" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="components\compreg.dat" destination-modified="0" destination="&lt;InstallDir&gt;\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="components\nsCommandLineHandler.js" destination-modified="0" destination="&lt;InstallDir&gt;\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="components\nsPlatformGlue.js" destination-modified="0" destination="&lt;InstallDir&gt;\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="components\ql.wav" destination-modified="0" destination="&lt;InstallDir&gt;\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="components\qlprism.dll" destination-modified="0" destination="&lt;InstallDir&gt;\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="components\qlprism.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="components\qlprot.js" destination-modified="0" destination="&lt;InstallDir&gt;\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="components\WebContentConverter.js" destination-modified="0" destination="&lt;InstallDir&gt;\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="components\xpti.dat" destination-modified="0" destination="&lt;InstallDir&gt;\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="demouploader\DemoUpdater.dll" destination-modified="0" destination="&lt;InstallDir&gt;\demouploader" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="demouploader\QLRDemoUploader.exe" destination-modified="0" destination="&lt;InstallDir&gt;\demouploader" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="demouploader\QLRDemoUploader.exe.config" destination-modified="0" destination="&lt;InstallDir&gt;\demouploader" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="demouploader\QLRDemoUploader.XmlSerializers.dll" destination-modified="0" destination="&lt;InstallDir&gt;\demouploader" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="modules\consts.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="modules\FaviconDownloader.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="modules\ImageUtils.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="modules\WebAppInstall.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="modules\WebAppProperties.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\profiles.ini" destination-modified="0" destination="&lt;InstallDir&gt;\ql" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\AccessibleMarshal.dll" destination-modified="0" destination="&lt;InstallDir&gt;\xul" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\closeql.exe" destination-modified="0" destination="&lt;InstallDir&gt;\xul" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\freebl3.dll" destination-modified="0" destination="&lt;InstallDir&gt;\xul" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\IA2Marshal.dll" destination-modified="0" destination="&lt;InstallDir&gt;\xul" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\js3250.dll" destination-modified="0" destination="&lt;InstallDir&gt;\xul" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\nspr4.dll" destination-modified="0" destination="&lt;InstallDir&gt;\xul" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\nss3.dll" destination-modified="0" destination="&lt;InstallDir&gt;\xul" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\nssckbi.dll" destination-modified="0" destination="&lt;InstallDir&gt;\xul" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\nssdbm3.dll" destination-modified="0" destination="&lt;InstallDir&gt;\xul" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\nssutil3.dll" destination-modified="0" destination="&lt;InstallDir&gt;\xul" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\platform.ini" destination-modified="0" destination="&lt;InstallDir&gt;\xul" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\plc4.dll" destination-modified="0" destination="&lt;InstallDir&gt;\xul" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\plds4.dll" destination-modified="0" destination="&lt;InstallDir&gt;\xul" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\quakelive.exe" destination-modified="0" destination="&lt;InstallDir&gt;\xul" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\smime3.dll" destination-modified="0" destination="&lt;InstallDir&gt;\xul" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\softokn3.dll" destination-modified="0" destination="&lt;InstallDir&gt;\xul" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\sqlite3.dll" destination-modified="0" destination="&lt;InstallDir&gt;\xul" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\ssl3.dll" destination-modified="0" destination="&lt;InstallDir&gt;\xul" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\xpcom.dll" destination-modified="0" destination="&lt;InstallDir&gt;\xul" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\xul.dll" destination-modified="0" destination="&lt;InstallDir&gt;\xul" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="defaults\preferences\preferences.js" destination-modified="0" destination="&lt;InstallDir&gt;\defaults\preferences" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\blocklist.xml" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\compatibility.ini" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions.ini" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions.rdf" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\localstore.json" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\mimeTypes.rdf" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\prefs.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\webappsstore.sqlite" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\settings\override.ini" destination-modified="0" destination="&lt;InstallDir&gt;\ql\settings" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\settings\ql.ini" destination-modified="0" destination="&lt;InstallDir&gt;\ql\settings" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\chrome\classic.jar" destination-modified="0" destination="&lt;InstallDir&gt;\xul\chrome" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\chrome\classic.manifest" destination-modified="0" destination="&lt;InstallDir&gt;\xul\chrome" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\chrome\comm.jar" destination-modified="0" destination="&lt;InstallDir&gt;\xul\chrome" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\chrome\comm.manifest" destination-modified="0" destination="&lt;InstallDir&gt;\xul\chrome" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\chrome\en-US.jar" destination-modified="0" destination="&lt;InstallDir&gt;\xul\chrome" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\chrome\en-US.manifest" destination-modified="0" destination="&lt;InstallDir&gt;\xul\chrome" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\chrome\pippki.jar" destination-modified="0" destination="&lt;InstallDir&gt;\xul\chrome" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\chrome\pippki.manifest" destination-modified="0" destination="&lt;InstallDir&gt;\xul\chrome" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\chrome\toolkit.jar" destination-modified="0" destination="&lt;InstallDir&gt;\xul\chrome" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\chrome\toolkit.manifest" destination-modified="0" destination="&lt;InstallDir&gt;\xul\chrome" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\accessibility-msaa.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\accessibility.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\alerts.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\appshell.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\appstartup.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\autocomplete.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\autoconfig.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\caps.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\chardet.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\chrome.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\commandhandler.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\commandlines.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\components.list" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\composer.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\contentprefs.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\content_base.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\content_events.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\content_html.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\content_htmldoc.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\content_xmldoc.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\content_xslt.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\content_xtf.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\cookie.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\directory.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\docshell_base.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\dom.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\dom_base.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\dom_canvas.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\dom_core.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\dom_css.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\dom_events.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\dom_geolocation.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\dom_html.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\dom_json.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\dom_loadsave.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\dom_offline.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\dom_range.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\dom_sidebar.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\dom_storage.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\dom_stylesheets.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\dom_svg.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\dom_threads.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\dom_traversal.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\dom_views.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\dom_xbl.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\dom_xpath.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\dom_xul.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\downloads.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\editor.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\embed_base.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\extensions.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\exthandler.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\exthelper.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\fastfind.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\FeedProcessor.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\feeds.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\find.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\gfx.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\GPSDGeolocationProvider.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\htmlparser.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\imgicon.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\imglib2.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\inspector.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\intl.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\jar.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\jsconsole-clhandler.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\jsdservice.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\layout_base.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\layout_printing.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\layout_xul.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\layout_xul_tree.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\locale.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\loginmgr.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\lwbrk.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\mimetype.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\mozbrwsr.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\mozfind.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\necko.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\necko_about.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\necko_cache.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\necko_cookie.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\necko_dns.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\necko_file.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\necko_ftp.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\necko_http.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\necko_res.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\necko_socket.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\necko_strconv.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\necko_viewsource.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\necko_wifi.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\NetworkGeolocationProvider.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\nsAddonRepository.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\nsBadCertHandler.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\nsBlocklistService.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\nsContentDispatchChooser.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\nsContentPrefService.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\nsDefaultCLH.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\nsDownloadManagerUI.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\nsExtensionManager.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\nsFormAutoComplete.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\nsHandlerService.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\nsHelperAppDlg.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\nsINIProcessor.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\nsLivemarkService.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\nsLoginInfo.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\nsLoginManager.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\nsLoginManagerPrompter.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\nsPlacesAutoComplete.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\nsPlacesDBFlush.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\nsProgressDialog.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\nsProxyAutoConfig.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\nsSearchService.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\nsSearchSuggestions.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\nsTaggingService.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\nsTryToClose.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\nsUpdateTimerManager.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\nsURLFormatter.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\nsWebHandlerApp.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\nsXULAppInstall.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\parentalcontrols.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\pipboot.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\pipnss.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\pippki.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\places.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\plugin.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\pluginGlue.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\pref.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\prefetch.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\profile.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\proxyObject.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\rdf.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\satchel.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\saxparser.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\shistory.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\spellchecker.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\storage-Legacy.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\storage-mozStorage.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\storage.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\toolkitprofile.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\toolkitsearch.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\txEXSLTRegExFunctions.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\txmgr.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\txtsvc.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\uconv.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\unicharutil.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\update.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\uriloader.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\urlformatter.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\webbrowserpersist.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\webBrowser_core.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\webshell_idls.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\widget.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\windowds.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\windowwatcher.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\xpcom_base.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\xpcom_components.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\xpcom_ds.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\xpcom_io.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\xpcom_system.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\xpcom_thread.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\xpcom_xpti.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\xpconnect.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\xpinstall.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\xulapp.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\xulapp_setup.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\xuldoc.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\xultmpl.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\components\zipwriter.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\xul\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\dictionaries\en-US.aff" destination-modified="0" destination="&lt;InstallDir&gt;\xul\dictionaries" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\dictionaries\en-US.dic" destination-modified="0" destination="&lt;InstallDir&gt;\xul\dictionaries" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\greprefs\all.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\greprefs" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\greprefs\security-prefs.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\greprefs" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\greprefs\xpinstall.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\greprefs" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\modules\CertUtils.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\xul\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\modules\ctypes.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\xul\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\modules\debug.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\modules\DownloadLastDir.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\xul\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\modules\DownloadUtils.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\xul\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\modules\FileUtils.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\xul\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\modules\ISO8601DateUtils.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\xul\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\modules\LightweightThemeConsumer.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\xul\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\modules\LightweightThemeManager.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\xul\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\modules\Microformats.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\modules\NetUtil.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\xul\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\modules\PlacesDBUtils.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\xul\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\modules\PluralForm.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\xul\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\modules\SpatialNavigation.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\modules\utils.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\modules\WindowDraggingUtils.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\xul\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\modules\XPCOMUtils.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\xul\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\plugins\npnul32.dll" destination-modified="0" destination="&lt;InstallDir&gt;\xul\plugins" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\arrow.gif" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\arrowd.gif" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\broken-image.png" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\charsetalias.properties" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\charsetData.properties" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\contenteditable.css" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\designmode.css" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\EditorOverride.css" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\forms.css" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\grabber.gif" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\hiddenWindow.html" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\html.css" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\langGroups.properties" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\language.properties" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\loading-image.png" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\mathml.css" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\quirk.css" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\svg.css" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\table-add-column-after-active.gif" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\table-add-column-after-hover.gif" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\table-add-column-after.gif" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\table-add-column-before-active.gif" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\table-add-column-before-hover.gif" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\table-add-column-before.gif" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\table-add-row-after-active.gif" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\table-add-row-after-hover.gif" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\table-add-row-after.gif" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\table-add-row-before-active.gif" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\table-add-row-before-hover.gif" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\table-add-row-before.gif" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\table-remove-column-active.gif" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\table-remove-column-hover.gif" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\table-remove-column.gif" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\table-remove-row-active.gif" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\table-remove-row-hover.gif" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\table-remove-row.gif" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\ua.css" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\viewsource.css" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\wincharset.properties" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="chrome\icons\default\app.png" destination-modified="0" destination="&lt;InstallDir&gt;\chrome\icons\default" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="chrome\icons\default\install-shortcut.ico" destination-modified="0" destination="&lt;InstallDir&gt;\chrome\icons\default" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="chrome\icons\default\install-shortcut.png" destination-modified="0" destination="&lt;InstallDir&gt;\chrome\icons\default" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="chrome\icons\default\install-shortcut48.png" destination-modified="0" destination="&lt;InstallDir&gt;\chrome\icons\default" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\adblockplus\patterns.ini" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\adblockplus" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\scripts\config.xml" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\scripts" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\defaults\autoconfig\platform.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\defaults\autoconfig" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\defaults\autoconfig\prefcalls.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\defaults\autoconfig" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\defaults\pref\xulrunner.js" destination-modified="0" destination="&lt;InstallDir&gt;\xul\defaults\pref" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\defaults\profile\localstore.rdf" destination-modified="0" destination="&lt;InstallDir&gt;\xul\defaults\profile" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\dtd\mathml.dtd" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res\dtd" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\dtd\xhtml11.dtd" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res\dtd" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\entityTables\html40Latin1.properties" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res\entityTables" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\entityTables\html40Special.properties" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res\entityTables" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\entityTables\html40Symbols.properties" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res\entityTables" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\entityTables\htmlEntityVersions.properties" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res\entityTables" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\entityTables\mathml20.properties" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res\entityTables" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\entityTables\transliterate.properties" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res\entityTables" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\fonts\mathfont.properties" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res\fonts" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\fonts\mathfontStandardSymbolsL.properties" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res\fonts" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\fonts\mathfontSTIXNonUnicode.properties" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res\fonts" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\fonts\mathfontSTIXSize1.properties" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res\fonts" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\fonts\mathfontSymbol.properties" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res\fonts" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\fonts\mathfontUnicode.properties" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res\fonts" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\res\html\folder.png" destination-modified="0" destination="&lt;InstallDir&gt;\xul\res\html" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\QLDemoPlayer@qldp\chrome.manifest" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\QLDemoPlayer@qldp" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\QLDemoPlayer@qldp\install.rdf" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\QLDemoPlayer@qldp" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\chrome.manifest" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\install.rdf" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\scripts\linkify_plus_for_quake_l\linkify_plus_for_quake_l.user.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\scripts\linkify_plus_for_quake_l" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\scripts\new_quakelive_adremover\new_quakelive_adremover.user.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\scripts\new_quakelive_adremover" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\scripts\playquake_team_informati\playquake_team_informati.user.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\scripts\playquake_team_informati" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\scripts\qlping_quakelivecom_udp_\qlping_quakelivecom_udp_.user.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\scripts\qlping_quakelivecom_udp_" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\scripts\qlrankscom_display\qlrankscom_display.user.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\scripts\qlrankscom_display" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\scripts\ql_gametype_switcher\ql_gametype_switcher.user.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\scripts\ql_gametype_switcher" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\scripts\ql_messenger\ql_messenger.user.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\scripts\ql_messenger" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\scripts\quakelive_no_inactivity_\quakelive_no_inactivity_.user.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\scripts\quakelive_no_inactivity_" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\scripts\quakelive_player_status\quakelive_player_status.user.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\scripts\quakelive_player_status" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\scripts\quake_live_autoinvite\quake_live_autoinvite.user.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\scripts\quake_live_autoinvite" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\scripts\quake_live_background_ch\quake_live_background_ch.user.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\scripts\quake_live_background_ch" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\scripts\quake_live_extended_stat\quake_live_extended_stat.user.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\scripts\quake_live_extended_stat" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\scripts\quake_live_friend_comman\quake_live_friend_comman.user.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\scripts\quake_live_friend_comman" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\scripts\quake_live_ingame_friend\quake_live_ingame_friend.user.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\scripts\quake_live_ingame_friend" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\scripts\quake_live_message_beep\quake_live_message_beep.user.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\scripts\quake_live_message_beep" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\scripts\quake_live_new_alt_brows\quake_live_new_alt_brows.user.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\scripts\quake_live_new_alt_brows" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\scripts\quake_live_qlprism_linke\quake_live_qlprism_linke.user.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\scripts\quake_live_qlprism_linke" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\scripts\quake_live_stream_notifi\quake_live_stream_notifi.user.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\scripts\quake_live_stream_notifi" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\scripts\quake_live_weighted_accu\quake_live_weighted_accu.user.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\scripts\quake_live_weighted_accu" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\scripts\quake_live_window_mode_e\quake_live_window_mode_e.user.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\scripts\quake_live_window_mode_e" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\scripts\reorganize_quakelive\reorganize_quakelive.user.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\scripts\reorganize_quakelive" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\settings\icons\default\Gear.ico" destination-modified="0" destination="&lt;InstallDir&gt;\ql\settings\icons\default" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\settings\icons\default\ql.ico" destination-modified="0" destination="&lt;InstallDir&gt;\ql\settings\icons\default" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\settings\icons\default\settings.ico" destination-modified="0" destination="&lt;InstallDir&gt;\ql\settings\icons\default" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\settings\icons\default\update-ql.ico" destination-modified="0" destination="&lt;InstallDir&gt;\ql\settings\icons\default" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\settings\icons\default\webapp.ico" destination-modified="0" destination="&lt;InstallDir&gt;\ql\settings\icons\default" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\defaults\profile\chrome\userChrome-example.css" destination-modified="0" destination="&lt;InstallDir&gt;\xul\defaults\profile\chrome" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\defaults\profile\chrome\userContent-example.css" destination-modified="0" destination="&lt;InstallDir&gt;\xul\defaults\profile\chrome" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\defaults\profile\US\localstore.rdf" destination-modified="0" destination="&lt;InstallDir&gt;\xul\defaults\profile\US" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\chrome\qlpts.qla" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\chrome" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\components\chatzilla-service.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\components\gmIBrowserWindow.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\components\gmIGreasemonkeyService.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\components\gmIMenuCommand.xpt" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\components\greasemonkey.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\components\Initializer.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\components" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\defaults\patterns.ini" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\defaults" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\modules\AppIntegration.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\modules\AppIntegrationFennec.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\modules\Bootstrap.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\modules\ContentPolicy.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\modules\ContentPolicyRemote.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\modules\ElemHide.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\modules\ElemHideRemote.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\modules\FilterClasses.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\modules\FilterListener.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\modules\FilterNotifier.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\modules\FilterStorage.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\modules\Matcher.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\modules\ObjectTabs.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\modules\Prefs.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\modules\Public.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\modules\RequestNotifier.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\modules\SubscriptionClasses.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\modules\Sync.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\modules\Synchronizer.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\modules\Utils.jsm" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\modules" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\defaults\profile\US\chrome\userChrome-example.css" destination-modified="0" destination="&lt;InstallDir&gt;\xul\defaults\profile\US\chrome" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="xul\defaults\profile\US\chrome\userContent-example.css" destination-modified="0" destination="&lt;InstallDir&gt;\xul\defaults\profile\US\chrome" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\QLDemoPlayer@qldp\chrome\content\GUI.css" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\QLDemoPlayer@qldp\chrome\content" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\QLDemoPlayer@qldp\chrome\content\GUI.html" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\QLDemoPlayer@qldp\chrome\content" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\QLDemoPlayer@qldp\chrome\content\initiator.xul" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\QLDemoPlayer@qldp\chrome\content" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\QLDemoPlayer@qldp\chrome\content\jquery-1.5.1.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\QLDemoPlayer@qldp\chrome\content" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\QLDemoPlayer@qldp\chrome\content\override.xul" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\QLDemoPlayer@qldp\chrome\content" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\QLDemoPlayer@qldp\chrome\content\QLDP-GUI.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\QLDemoPlayer@qldp\chrome\content" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\QLDemoPlayer@qldp\chrome\content\QLDP-init.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\QLDemoPlayer@qldp\chrome\content" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\QLDemoPlayer@qldp\chrome\content\QLDP-IO.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\QLDemoPlayer@qldp\chrome\content" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\QLDemoPlayer@qldp\chrome\content\QLDP.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\QLDemoPlayer@qldp\chrome\content" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\QLDemoPlayer@qldp\chrome\content\qldp.png" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\QLDemoPlayer@qldp\chrome\content" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\QLDemoPlayer@qldp\defaults\preferences\preferences.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\QLDemoPlayer@qldp\defaults\preferences" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\defaults\preferences\adblockplus.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\defaults\preferences" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\defaults\preferences\greasemonkey.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\defaults\preferences" reg-priority="1" overwrite-mode="0" attributes="97" />
+            <file runtime-location="" name="ql\data\extensions\qlprismtools@qlprism.us\defaults\preferences\sl.js" destination-modified="0" destination="&lt;InstallDir&gt;\ql\data\extensions\qlprismtools@qlprism.us\defaults\preferences" reg-priority="1" overwrite-mode="0" attributes="97" />
+          </file-set>
+        </folder>
+      </files>
+    </installation-item>
+  </cs-files>
+  <cs-syschanges>
+    <require-admin selected="0" />
+    <as-invoker selected="0" />
+  </cs-syschanges>
+  <cs-syschanges-registry>
+    <root key="0">
+      <key name="qlprism" uninstall-type="1">
+        <value value="2" name="EditFlags" type="2" uninstall-type="1" />
+        <value value="" name="FriendlyTypeName" type="2" uninstall-type="1" />
+        <value value="" name="URL Protocol" type="2" uninstall-type="1" />
+        <key name="DefaultIcon" uninstall-type="1">
+          <value value="" name="" type="2" uninstall-type="1" />
+        </key>
+        <key name="shell" uninstall-type="1">
+          <value value="open" name="" type="2" uninstall-type="1" />
+          <value value="open" name="" type="2" uninstall-type="1" />
+          <key name="open" uninstall-type="1">
+            <key name="command" uninstall-type="1">
+              <value value="&quot;&lt;InstallDir&gt;\xul\quakelive.exe&quot; &quot;&lt;InstallDir&gt;\application.ini&quot; -profile &quot;&lt;InstallDir&gt;\ql\data&quot; -webapp &quot;&lt;InstallDir&gt;\ql\settings&quot; -override &quot;&lt;InstallDir&gt;\ql\settings\override.ini&quot; -url &quot;%1&quot;" name="" type="2" uninstall-type="1" />
+              <value value="&quot;&lt;InstallDir&gt;\xul\quakelive.exe&quot; &quot;&lt;InstallDir&gt;\application.ini&quot; -profile &quot;&lt;InstallDir&gt;\ql\data&quot; -webapp &quot;&lt;InstallDir&gt;\ql\settings&quot; -override &quot;&lt;InstallDir&gt;\ql\settings\override.ini&quot; -url &quot;%1&quot;" name="" type="2" uninstall-type="1" />
+            </key>
+            <key name="ddeexec" uninstall-type="1">
+              <value value="&quot;%1&quot;,,0,0,,,," name="" type="2" uninstall-type="0" />
+              <value value="" name="NoActivateHandler" type="2" uninstall-type="0" />
+              <key name="Application" uninstall-type="1">
+                <value value="QLPrism" name="" type="2" uninstall-type="1" />
+                <value value="QLPrism" name="" type="2" uninstall-type="1" />
+              </key>
+              <key name="Topic" uninstall-type="1">
+                <value value="WWW_OpenURL" name="" type="2" uninstall-type="1" />
+              </key>
+            </key>
+          </key>
+        </key>
+      </key>
+    </root>
+    <root key="1">
+      <key name="Software" uninstall-type="0">
+        <key name="syncore" uninstall-type="0">
+          <key name="QLPrism" uninstall-type="0">
+            <key name="Update" uninstall-type="0">
+              <value value="1" name="CheckForUpdates" type="2" uninstall-type="0" />
+              <value value="" name="LastCheckTime" type="2" uninstall-type="0" />
+            </key>
+          </key>
+        </key>
+        <key name="Classes" uninstall-type="0">
+          <key name="qlprism" uninstall-type="1">
+            <value value="2" name="EditFlags" type="2" uninstall-type="1" />
+            <value value="" name="" type="2" uninstall-type="1" />
+            <value value="" name="URL Protocol" type="2" uninstall-type="1" />
+            <key name="DefaultIcon" uninstall-type="1" />
+            <key name="shell" uninstall-type="1">
+              <value value="open" name="" type="2" uninstall-type="0" />
+              <key name="open" uninstall-type="1">
+                <key name="command" uninstall-type="1">
+                  <value value="&quot;&lt;InstallDir&gt;\xul\quakelive.exe&quot; &quot;&lt;InstallDir&gt;\application.ini&quot; -profile &quot;&lt;InstallDir&gt;\ql\data&quot; -webapp &quot;&lt;InstallDir&gt;\ql\settings&quot; -override &quot;&lt;InstallDir&gt;\ql\settings\override.ini&quot; -url &quot;%1&quot;" name="" type="2" uninstall-type="1" />
+                </key>
+                <key name="ddeexec" uninstall-type="1">
+                  <value value="&quot;%1&quot;,,0,0,,,," name="" type="2" uninstall-type="1" />
+                  <value value="" name="NoActivateHandler" type="2" uninstall-type="1" />
+                  <key name="Application" uninstall-type="1">
+                    <value value="QLPrism" name="" type="2" uninstall-type="0" />
+                  </key>
+                  <key name="Topic" uninstall-type="1">
+                    <value value="WWW_OpenURL" name="" type="2" uninstall-type="0" />
+                  </key>
+                </key>
+              </key>
+            </key>
+          </key>
+        </key>
+      </key>
+    </root>
+    <root key="2">
+      <key name="Software" uninstall-type="0">
+        <key name="QLPrism" uninstall-type="0">
+          <value value="&lt;AppVersion&gt;" name="Version" type="2" uninstall-type="0" />
+          <value value="&lt;InstallDir&gt;" name="Directory" type="2" uninstall-type="0" />
+          <value value="xph" name="XFire" type="2" uninstall-type="0">
+            <condition osmask="-2147483647">
+              <advanced-condition operator="Equals" value1="&lt;HasXfire32&gt;" value2="1" />
+              <advanced-condition operator="Equals" value1="&lt;HasXfire64&gt;" value2="1" />
+            </condition>
+          </value>
+          <value value="&lt;InstallDir&gt;\demouploader" name="QLRanksDemo" type="2" uninstall-type="0" />
+        </key>
+      </key>
+    </root>
+    <root key="3" />
+    <apply-conditions-access selected="0" />
+  </cs-syschanges-registry>
+  <cs-syschanges-shortcuts>
+    <shortcut link-name="&lt;ProgramsDirNt&gt;\QLPrism\Uninstall QLPrism.lnk" command-line="" target-file="&lt;UninstallerName&gt;" working-dir="&lt;WindowsDir&gt;" icon="" />
+    <shortcut link-name="&lt;DesktopNt&gt;\QLPrism.lnk" command-line="" target-file="&lt;InstallDir&gt;\quakelive.exe" working-dir="&lt;InstallDir&gt;" icon="&lt;InstallDir&gt;\ql\settings\icons\default\ql.ico,0" />
+    <shortcut link-name="&lt;ProgramsDirNt&gt;\QLPrism\QLPrism.lnk" command-line="" target-file="&lt;InstallDir&gt;\quakelive.exe" working-dir="&lt;InstallDir&gt;" icon="&lt;InstallDir&gt;\ql\settings\icons\default\ql.ico,0" />
+    <shortcut link-name="&lt;ProgramsDirNt&gt;\QLPrism\QLPrism Steam-XFire Utility.lnk" command-line="&lt;InstallDir&gt;\qlprism-steamxfire.exe" target-file="&lt;InstallDir&gt;\qlprism-steamxfire.exe" working-dir="&lt;InstallDir&gt;" icon="&lt;InstallDir&gt;\ql\settings\icons\default\settings.ico,0" />
+    <shortcut link-name="&lt;ProgramsDirNt&gt;\QLPrism\QLPrism (High Priority).lnk" command-line="" target-file="&lt;InstallDir&gt;\quakelive-highpriority.exe" working-dir="&lt;InstallDir&gt;" icon="&lt;InstallDir&gt;\ql\settings\icons\default\ql.ico,0" />
+    <open-shortcut-folder selected="0" />
+  </cs-syschanges-shortcuts>
+  <cs-syschanges-ini />
+  <cs-syschanges-text>
+    <text action="Replace text" replace="Windows NT 5.1" file="&lt;InstallDir&gt;\defaults\preferences\preferences.js" search="Windows NT 6.1">
+      <condition osmask="192" />
+    </text>
+    <text action="Replace text" replace="pref(&quot;qlprism.option.systemtray&quot;, false);" file="&lt;InstallDir&gt;\defaults\preferences\preferences.js" search="pref(&quot;qlprism.option.systemtray&quot;, true);">
+      <condition osmask="-2147483647">
+        <advanced-condition operator="Equals" value1="&lt;frvm&gt;" value2="1" />
+        <advanced-condition operator="Equals" value1="&lt;gnrm&gt;" value2="0" />
+      </condition>
+    </text>
+    <text action="Replace text" replace="pref(&quot;qlprism.option.ircauto&quot;, true);" file="&lt;InstallDir&gt;\defaults\preferences\preferences.js" search="pref(&quot;qlprism.option.ircauto&quot;, false);">
+      <condition osmask="-2147483647">
+        <advanced-condition operator="Equals" value1="&lt;irc1&gt;" value2="1" />
+        <advanced-condition operator="Equals" value1="&lt;irc2&gt;" value2="0" />
+      </condition>
+    </text>
+    <text action="Add to end of file" replace="[5771_2]" file="&lt;CommonAppData&gt;\xfire\xfire_games.ini" search="">
+      <condition osmask="-2147482880">
+        <advanced-condition operator="Equals" value1="&lt;xfireA&gt;" value2="1" />
+        <advanced-condition operator="Equals" value1="&lt;xfireB&gt;" value2="0" />
+      </condition>
+    </text>
+    <text action="Add to end of file" replace="LongName=Quake Live" file="&lt;CommonAppData&gt;\xfire\xfire_games.ini" search="">
+      <condition osmask="-2147482880">
+        <advanced-condition operator="Equals" value1="&lt;xfireA&gt;" value2="1" />
+        <advanced-condition operator="Equals" value1="&lt;xfireB&gt;" value2="0" />
+      </condition>
+    </text>
+    <text action="Add to end of file" replace="ShortName=quakel" file="&lt;CommonAppData&gt;\xfire\xfire_games.ini" search="">
+      <condition osmask="-2147482880">
+        <advanced-condition operator="Equals" value1="&lt;xfireA&gt;" value2="1" />
+        <advanced-condition operator="Equals" value1="&lt;xfireB&gt;" value2="0" />
+      </condition>
+    </text>
+    <text action="Add to end of file" replace="External=1" file="&lt;CommonAppData&gt;\xfire\xfire_games.ini" search="">
+      <condition osmask="-2147482880">
+        <advanced-condition operator="Equals" value1="&lt;xfireA&gt;" value2="1" />
+        <advanced-condition operator="Equals" value1="&lt;xfireB&gt;" value2="0" />
+      </condition>
+    </text>
+    <text action="Add to end of file" replace="LauncherDirKey=HKEY_LOCAL_MACHINE\SOFTWARE\QLPrism\Directory" file="&lt;CommonAppData&gt;\xfire\xfire_games.ini" search="">
+      <condition osmask="-2147482880">
+        <advanced-condition operator="Equals" value1="&lt;xfireA&gt;" value2="1" />
+        <advanced-condition operator="Equals" value1="&lt;xfireB&gt;" value2="0" />
+      </condition>
+    </text>
+    <text action="Add to end of file" replace="LauncherExe=quakelive.exe" file="&lt;CommonAppData&gt;\xfire\xfire_games.ini" search="">
+      <condition osmask="-2147482880">
+        <advanced-condition operator="Equals" value1="&lt;xfireA&gt;" value2="1" />
+        <advanced-condition operator="Equals" value1="&lt;xfireB&gt;" value2="0" />
+      </condition>
+    </text>
+    <text action="Add to end of file" replace="DetectExe=xul\quakelive.exe" file="&lt;CommonAppData&gt;\xfire\xfire_games.ini" search="">
+      <condition osmask="-2147482880">
+        <advanced-condition operator="Equals" value1="&lt;xfireA&gt;" value2="1" />
+        <advanced-condition operator="Equals" value1="&lt;xfireB&gt;" value2="0" />
+      </condition>
+    </text>
+    <text action="Add to end of file" replace="InGameRenderer=OGL" file="&lt;CommonAppData&gt;\xfire\xfire_games.ini" search="">
+      <condition osmask="-2147482880">
+        <advanced-condition operator="Equals" value1="&lt;xfireA&gt;" value2="1" />
+        <advanced-condition operator="Equals" value1="&lt;xfireB&gt;" value2="0" />
+      </condition>
+    </text>
+    <text action="Add to end of file" replace="InGameFlags=ENABLE_MOUSE|USE_DINPUT_MOUSE|USE_DINPUT1|WGLSWAPLAYERBUFFERS|SUBCLASS_WNDPaROC" file="&lt;CommonAppData&gt;\xfire\xfire_games.ini" search="">
+      <condition osmask="-2147482880">
+        <advanced-condition operator="Equals" value1="&lt;xfireA&gt;" value2="1" />
+        <advanced-condition operator="Equals" value1="&lt;xfireB&gt;" value2="0" />
+      </condition>
+    </text>
+    <text action="Add to end of file" replace="InGameOGLTextureOffset=32000" file="&lt;CommonAppData&gt;\xfire\xfire_games.ini" search="">
+      <condition osmask="-2147482880">
+        <advanced-condition operator="Equals" value1="&lt;xfireA&gt;" value2="1" />
+        <advanced-condition operator="Equals" value1="&lt;xfireB&gt;" value2="0" />
+      </condition>
+    </text>
+    <text action="Add to end of file" replace="[5771_2]" file="&lt;ProgramFiles&gt;\xfire\xfire_games.ini" search="">
+      <condition osmask="-2147483424">
+        <advanced-condition operator="Equals" value1="&lt;xfireA&gt;" value2="1" />
+        <advanced-condition operator="Equals" value1="&lt;xfireB&gt;" value2="0" />
+      </condition>
+    </text>
+    <text action="Add to end of file" replace="LongName=Quake Live" file="&lt;ProgramFiles&gt;\xfire\xfire_games.ini" search="">
+      <condition osmask="-2147483424">
+        <advanced-condition operator="Equals" value1="&lt;xfireA&gt;" value2="1" />
+        <advanced-condition operator="Equals" value1="&lt;xfireB&gt;" value2="0" />
+      </condition>
+    </text>
+    <text action="Add to end of file" replace="ShortName=quakel" file="&lt;ProgramFiles&gt;\xfire\xfire_games.ini" search="">
+      <condition osmask="-2147483424">
+        <advanced-condition operator="Equals" value1="&lt;xfireA&gt;" value2="1" />
+        <advanced-condition operator="Equals" value1="&lt;xfireB&gt;" value2="0" />
+      </condition>
+    </text>
+    <text action="Add to end of file" replace="External=1" file="&lt;ProgramFiles&gt;\xfire\xfire_games.ini" search="">
+      <condition osmask="-2147483424">
+        <advanced-condition operator="Equals" value1="&lt;xfireA&gt;" value2="1" />
+        <advanced-condition operator="Equals" value1="&lt;xfireB&gt;" value2="0" />
+      </condition>
+    </text>
+    <text action="Add to end of file" replace="LauncherDirKey=HKEY_LOCAL_MACHINE\SOFTWARE\QLPrism\Directory" file="&lt;ProgramFiles&gt;\xfire\xfire_games.ini" search="">
+      <condition osmask="-2147483424">
+        <advanced-condition operator="Equals" value1="&lt;xfireA&gt;" value2="1" />
+        <advanced-condition operator="Equals" value1="&lt;xfireB&gt;" value2="0" />
+      </condition>
+    </text>
+    <text action="Add to end of file" replace="LauncherExe=quakelive.exe" file="&lt;ProgramFiles&gt;\xfire\xfire_games.ini" search="">
+      <condition osmask="-2147483424">
+        <advanced-condition operator="Equals" value1="&lt;xfireA&gt;" value2="1" />
+        <advanced-condition operator="Equals" value1="&lt;xfireB&gt;" value2="0" />
+      </condition>
+    </text>
+    <text action="Add to end of file" replace="DetectExe=xul\quakelive.exe" file="&lt;ProgramFiles&gt;\xfire\xfire_games.ini" search="">
+      <condition osmask="-2147483424">
+        <advanced-condition operator="Equals" value1="&lt;xfireA&gt;" value2="1" />
+        <advanced-condition operator="Equals" value1="&lt;xfireB&gt;" value2="0" />
+      </condition>
+    </text>
+    <text action="Add to end of file" replace="InGameRenderer=OGL" file="&lt;ProgramFiles&gt;\xfire\xfire_games.ini" search="">
+      <condition osmask="-2147483424">
+        <advanced-condition operator="Equals" value1="&lt;xfireA&gt;" value2="1" />
+        <advanced-condition operator="Equals" value1="&lt;xfireB&gt;" value2="0" />
+      </condition>
+    </text>
+    <text action="Add to end of file" replace="InGameFlags=ENABLE_MOUSE|USE_DINPUT_MOUSE|USE_DINPUT1|WGLSWAPLAYERBUFFERS|SUBCLASS_WNDPaROC" file="&lt;ProgramFiles&gt;\xfire\xfire_games.ini" search="">
+      <condition osmask="-2147483424">
+        <advanced-condition operator="Equals" value1="&lt;xfireA&gt;" value2="1" />
+        <advanced-condition operator="Equals" value1="&lt;xfireB&gt;" value2="0" />
+      </condition>
+    </text>
+    <text action="Add to end of file" replace="InGameOGLTextureOffset=32000" file="&lt;ProgramFiles&gt;\xfire\xfire_games.ini" search="">
+      <condition osmask="-2147483424">
+        <advanced-condition operator="Equals" value1="&lt;xfireA&gt;" value2="1" />
+        <advanced-condition operator="Equals" value1="&lt;xfireB&gt;" value2="0" />
+      </condition>
+    </text>
+    <text action="Add to end of file" replace="exec qlranks-elo.cfg" file="&lt;LocalAppData&gt;\..\LocalLow\id Software\quakelive\home\baseq3\autoexec.cfg" search="">
+      <condition osmask="-2147482880">
+        <advanced-condition operator="Equals" value1="&lt;qlranksA&gt;" value2="1" />
+        <advanced-condition operator="Equals" value1="&lt;qlranksB&gt;" value2="0" />
+      </condition>
+    </text>
+    <text action="Add to end of file" replace="exec qlranks-elo.cfg" file="&lt;RoamingAppData&gt;\id Software\quakelive\home\baseq3\autoexec.cfg" search="">
+      <condition osmask="-2147483456">
+        <advanced-condition operator="Equals" value1="&lt;qlranksA&gt;" value2="1" />
+        <advanced-condition operator="Equals" value1="&lt;qlranksB&gt;" value2="0" />
+      </condition>
+    </text>
+    <text action="Add to end of file" replace="exec qlping.cfg" file="&lt;LocalAppData&gt;\..\LocalLow\id Software\quakelive\home\baseq3\autoexec.cfg" search="">
+      <condition osmask="-2147482880">
+        <advanced-condition operator="Equals" value1="&lt;pingA&gt;" value2="1" />
+        <advanced-condition operator="Equals" value1="&lt;pingB&gt;" value2="0" />
+      </condition>
+    </text>
+    <text action="Add to end of file" replace="exec qlping.cfg" file="&lt;RoamingAppData&gt;\id Software\quakelive\home\baseq3\autoexec.cfg" search="">
+      <condition osmask="-2147483456">
+        <advanced-condition operator="Equals" value1="&lt;pingA&gt;" value2="1" />
+        <advanced-condition operator="Equals" value1="&lt;pingB&gt;" value2="0" />
+      </condition>
+    </text>
+  </cs-syschanges-text>
+  <cs-syschanges-associations />
+  <cs-sys-requirements>
+    <cpu amd="0" manufacturer="0" flags="0" speed="0" intel="0" />
+    <win-9x build="0" index="0" />
+    <win-nt index="0" service-pack="0" />
+    <ram value="0" />
+    <directx minor-version="0" major-version="0" />
+    <resolution yres="0" xres="0" bpp="0" />
+    <wave-playback selected="0" />
+    <midi-playback selected="0" />
+    <joystick selected="0" />
+    <java-version index="0" />
+    <net-version index="0" />
+  </cs-sys-requirements>
+  <cs-background>
+    <show-window selected="0" />
+    <occupy-task-bar selected="0" />
+    <title-bar show="1" text="&lt;AppName&gt; Installation" />
+    <background-color color1="8421376" color2="8421376" color3="8421376" mid-color-pos="50" />
+    <main-text color="16777215" shadow-color="0" text="&lt;AppName&gt; Installation" />
+    <sub-text color="16777215" shadow-color="0" text="Version &lt;AppVersion&gt;" />
+    <bottom-text color="16777215" text="Copyright Â&#169; 2004 &lt;CompanyName&gt;" />
+    <image y-offset="60" transparent="0" file="" tiled="0" position="0" full-screen="0" x-offset="20" />
+  </cs-background>
+  <cs-background-slideshow>
+    <settings y-offset="0" showtime="0" relative-position="0" image-position="0" dialog-position="0" x-offset="0" />
+  </cs-background-slideshow>
+  <cs-advanced>
+    <convert-jpgs selected="0" />
+    <convert-mp3s selected="0" />
+    <default-overwrite-mode index="3" />
+    <backup-system-files selected="0" />
+    <replace-in-use-files selected="1" />
+    <no-append-appname selected="0" />
+    <disable-xp-visuals selected="0" />
+    <suppress-privilege-warning value="0" />
+    <check-previous-installations value="" selected="1" value-name="Version" any-above="1" path="Software\QLPrism" root-key="2" smart-comparison="0" />
+    <start-sound file="" />
+    <own-dll command-line="QUAKE LIVE Home|MozillaUIWindowClass|Please close QLPrism/Firefox before updating.|Please close QLPrism, Firefox, and XFire if running!" file="C:\stuff\qlprism project files\installer files\DetectRunningAppByWindowName.dll" />
+    <installation-icon file="C:\stuff\qlprism project files\installer files\newsetup.ico" />
+    <min-compression-ratio value="0" />
+    <autorun-mode selected="0" />
+    <x64-compliance-mode selected="0" />
+    <version-information file-version-major-low="0" file-version-minor-low="0" file-version-major-high="1" create-version-information="0" file-version-minor-high="0">
+      <string-properties>
+        <property property-key="Comments" property-value="" />
+        <property property-key="CompanyName" property-value="&lt;CompanyName&gt;" />
+        <property property-key="FileDescription" property-value="" />
+        <property property-key="FileVersion" property-value="&lt;AppVersion&gt;" />
+        <property property-key="InternalName" property-value="" />
+        <property property-key="LegalCopyright" property-value="" />
+        <property property-key="LegalTrademarks" property-value="" />
+        <property property-key="OriginalFilename" property-value="" />
+        <property property-key="ProductName" property-value="&lt;AppName&gt;" />
+        <property property-key="ProductVersion" property-value="&lt;AppVersion&gt;" />
+      </string-properties>
+    </version-information>
+  </cs-advanced>
+  <cs-advanced-variables>
+    <variable name="&lt;__Internal_Initializing__&gt;" location1="" location2="" location3="" default-value="QLPrism Setup is starting..." type="Text" get-from="Nowhere" flags="" />
+    <variable name="&lt;__Internal_InitializingTitle__&gt;" location1="" location2="" location3="" default-value="QLPrism Setup" type="Text" get-from="Nowhere" flags="" />
+    <variable name="&lt;frvm&gt;" location1="1" location2="" location3="" default-value="0" type="Number" get-from="Nowhere" flags="" />
+    <variable name="&lt;gnrm&gt;" location1="1" location2="" location3="" default-value="1" type="Number" get-from="Nowhere" flags="" />
+    <variable name="&lt;irc1&gt;" location1="1" location2="" location3="" default-value="0" type="Number" get-from="Nowhere" flags="" />
+    <variable name="&lt;irc2&gt;" location1="1" location2="" location3="" default-value="1" type="Number" get-from="Nowhere" flags="" />
+    <variable name="&lt;ProgramData&gt;" location1="HKEY_LOCAL_MACHINE" location2="SOFTWARE\Microsoft\Windows\CurrentVersion\explorer\Shell Folders\" location3="Common AppData" default-value="" type="Text" get-from="Registry" flags="0" />
+    <variable name="&lt;xfireA&gt;" location1="1" location2="" location3="" default-value="0" type="Number" get-from="Nowhere" flags="" />
+    <variable name="&lt;xfireB&gt;" location1="1" location2="" location3="" default-value="1" type="Number" get-from="Nowhere" flags="" />
+    <variable name="&lt;HasXfire32&gt;" location1="HKEY_LOCAL_MACHINE" location2="SOFTWARE\Xfire" location3="CommonDataPath" default-value="0" type="Number" get-from="Registry" flags="1" />
+    <variable name="&lt;HasXfire64&gt;" location1="HKEY_LOCAL_MACHINE" location2="SOFTWARE\Wow6432Node\Xfire" location3="CommonDataPath" default-value="0" type="Number" get-from="Registry" flags="1" />
+    <variable name="&lt;steamA&gt;" location1="1" location2="" location3="" default-value="0" type="Number" get-from="Nowhere" flags="" />
+    <variable name="&lt;steamB&gt;" location1="1" location2="" location3="" default-value="1" type="Number" get-from="Nowhere" flags="" />
+    <variable name="&lt;HasSteam32&gt;" location1="HKEY_LOCAL_MACHINE" location2="SOFTWARE\Valve\Steam" location3="InstallPath" default-value="0" type="Number" get-from="Registry" flags="1" />
+    <variable name="&lt;HasSteam64&gt;" location1="HKEY_LOCAL_MACHINE" location2="SOFTWARE\Wow6432Node\Valve\Steam" location3="InstallPath" default-value="0" type="Number" get-from="Registry" flags="1" />
+    <variable name="&lt;launchA&gt;" location1="1" location2="" location3="" default-value="0" type="Number" get-from="Nowhere" flags="" />
+    <variable name="&lt;launchB&gt;" location1="1" location2="" location3="" default-value="1" type="Number" get-from="Nowhere" flags="" />
+    <variable name="&lt;SendClose&gt;" location1="" location2="" location3="" default-value="1" type="Number" get-from="Nowhere" flags="" />
+    <variable name="&lt;MaxWait&gt;" location1="" location2="" location3="" default-value="0" type="Number" get-from="Nowhere" flags="" />
+    <variable name="&lt;mircdir&gt;" location1="1" location2="" location3="" default-value="" type="Text" get-from="Nowhere" flags="" />
+    <variable name="&lt;pluginA&gt;" location1="1" location2="" location3="" default-value="0" type="Number" get-from="Nowhere" flags="" />
+    <variable name="&lt;pluginB&gt;" location1="1" location2="" location3="" default-value="1" type="Number" get-from="Nowhere" flags="" />
+    <variable name="&lt;UserLogon&gt;" location1="HKEY_CURRENT_USER" location2="Volatine Environment" location3="USERNAME" default-value="&lt;UserName&gt;" type="Text" get-from="Registry" flags="0" />
+    <variable name="&lt;qlranksA&gt;" location1="1" location2="" location3="" default-value="1" type="Number" get-from="Nowhere" flags="" />
+    <variable name="&lt;qlranksB&gt;" location1="1" location2="" location3="" default-value="0" type="Number" get-from="Nowhere" flags="" />
+    <variable name="&lt;pingA&gt;" location1="1" location2="" location3="" default-value="1" type="Number" get-from="Nowhere" flags="" />
+    <variable name="&lt;pingB&gt;" location1="1" location2="" location3="" default-value="0" type="Number" get-from="Nowhere" flags="" />
+  </cs-advanced-variables>
+  <cs-advanced-shell-interactive>
+    <operation action="Execute program" command-line="steam://AddNonSteamGame" timing="89" file="steam://AddNonSteamGame" flags="0" execute-count="1" working-dir="" custom-message="">
+      <condition osmask="-2147483647">
+        <advanced-condition operator="Equals" value1="&lt;steamA&gt;" value2="1" />
+        <advanced-condition operator="Equals" value1="&lt;steamB&gt;" value2="0" />
+      </condition>
+    </operation>
+    <operation action="Execute program" command-line="&lt;InstallDir&gt;\quakelive.exe" timing="13" file="&lt;InstallDir&gt;\quakelive.exe" flags="0" execute-count="1" working-dir="&lt;InstallDir&gt;" custom-message="">
+      <condition osmask="-2147483647">
+        <advanced-condition operator="Equals" value1="&lt;launchA&gt;" value2="1" />
+        <advanced-condition operator="Equals" value1="&lt;launchB&gt;" value2="0" />
+      </condition>
+    </operation>
+    <operation action="Execute program" command-line="&lt;SystemDir&gt;\regsvr32.exe /s &quot;&lt;LocalAppData&gt;\qlPing\0.0.1.0\npqlping.dll&quot;" timing="12" file="&lt;SystemDir&gt;\regsvr32.exe" flags="0" execute-count="1" working-dir="&lt;SystemDir&gt;" custom-message="" />
+  </cs-advanced-shell-interactive>
+  <cs-advanced-shell-file />
+  <cs-advanced-resource />
+  <cs-autoupdate>
+    <mode index="0" />
+    <installation-item index="0" />
+    <install-to value="&lt;InstallDir&gt;" />
+    <update-xml-url value="http://www.qlprism.us/update.xml" />
+    <download-urls>
+      <url value="http://avalon.diatonic.net/QLPrism-setup.exe" />
+    </download-urls>
+    <program-description value="QLPrism" />
+    <save-xml-as value="update.xml" />
+    <create-shortcut selected="1" />
+    <auto-execute selected="0" />
+  </cs-autoupdate>
+  <cs-create-setup>
+    <setup-filename value="C:\Users\E\Desktop\qlp440setup.exe" />
+    <multiple-disk-spanning selected="0" disk-size="1,38" />
+  </cs-create-setup>
+  <constants />
+  <internal>
+    <use-main-window-caption value="1" />
+    <last-bc-image-path value="" />
+    <last-dll-path value="C:\stuff\qlprism project files\installer files\" />
+    <last-text-file-path value="" />
+    <last-files-path value="C:\stuff\qlprism project files\demos\" />
+    <last-slide-image-path value="" />
+    <active-theme value="Windows Installer theme" />
+  </internal>
+</aiw2project>

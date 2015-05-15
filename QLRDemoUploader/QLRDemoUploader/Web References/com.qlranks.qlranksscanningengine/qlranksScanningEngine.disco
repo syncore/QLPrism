@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://qlranksscanningengine.qlranks.com/qlranksScanningEngine.asmx?wsdl" docRef="http://qlranksscanningengine.qlranks.com/qlranksScanningEngine.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://qlranksscanningengine.qlranks.com/qlranksScanningEngine.asmx" xmlns:q1="http://qlranksScanningEngine.qlranks.com" binding="q1:QlranksScanningEngineServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://qlranksscanningengine.qlranks.com/qlranksScanningEngine.asmx" xmlns:q2="http://qlranksScanningEngine.qlranks.com" binding="q2:QlranksScanningEngineServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

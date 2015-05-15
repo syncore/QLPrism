@@ -1,0 +1,3 @@
+content qldp chrome/content/
+overlay chrome://webrunner/content/webrunner.xul chrome://qldp/content/initiator.xul os=WINNT
+overlay chrome://webrunner/content/webrunner-linux.xul chrome://qldp/content/initiator.xul os=Linux
